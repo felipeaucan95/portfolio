@@ -1,10 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Meu Portfólio Online</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Candido | TI</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #fff;
+        }
+
+        header {
+            background: linear-gradient(90deg, #2563eb, #1e40af);
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        nav {
+            text-align: center;
+            padding: 10px;
+            background: #1e293b;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2563eb;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Olá, eu sou o Felipe Augusto Candido</h1>
-    <p>Profissional na área de T.I </p>
+
+<header>
+    <h1>Felipe Candido</h1>
+    <p>Profissional de TI | Infraestrutura | Segurança | Automação</p>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<section id="sobre">
+    <h2>Sobre mim</h2>
+    <div class="card">
+        <p>Profissional de Tecnologia da Informação com experiência em infraestrutura, redes, segurança e automação de processos. Focado em soluções eficientes e melhoria contínua.</p>
+    </div>
+</section>
+
+<section id="projetos">
+    <h2>Projetos</h2>
+
+    <div class="card">
+        <h3>🔐 Projeto de Segurança</h3>
+        <p>Implementação de políticas de segurança em ambiente corporativo com Microsoft 365.</p>
+    </div>
+
+    <div class="card">
+        <h3>🌐 Infraestrutura de Rede</h3>
+        <p>Configuração e gerenciamento de redes corporativas com múltiplos dispositivos.</p>
+    </div>
+
+    <div class="card">
+        <h3>⚙️ Automação de Processos</h3>
+        <p>Automatização de tarefas operacionais utilizando scripts e ferramentas de TI.</p>
+    </div>
+
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <div class="card">
+        <p>Email: seuemail@email.com</p>
+        <p>LinkedIn: linkedin.com/in/seuperfil</p>
+
+        <a class="btn" href="mailto:seuemail@email.com">Entrar em contato</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Felipe Candido - Todos os direitos reservados</p>
+</footer>
+
 </body>
 </html>
