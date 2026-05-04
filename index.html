@@ -1,76 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felipe Candido | TI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felipe Candido | TI</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: #fff;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #fff;
+    scroll-behavior: smooth;
+}
 
-        header {
-            background: linear-gradient(90deg, #2563eb, #1e40af);
-            padding: 40px;
-            text-align: center;
-        }
+/* ANIMAÇÃO */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        header p {
-            margin-top: 10px;
-            font-size: 18px;
-        }
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #2563eb, #1e40af);
+    padding: 60px;
+    text-align: center;
+    animation: slideTop 1s ease;
+}
 
-        nav {
-            text-align: center;
-            padding: 10px;
-            background: #1e293b;
-        }
+@keyframes slideTop {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
 
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
 
-        section {
-            padding: 40px;
-            max-width: 1000px;
-            margin: auto;
-        }
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
 
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
+/* MENU */
+nav {
+    text-align: center;
+    padding: 10px;
+    background: #1e293b;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #2563eb;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-        }
-    </style>
+/* SEÇÕES */
+section {
+    padding: 50px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARDS */
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* BOTÃO */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1e40af;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+</style>
 </head>
 
 <body>
@@ -86,46 +122,61 @@
     <a href="#contato">Contato</a>
 </nav>
 
-<section id="sobre">
+<section id="sobre" class="fade">
     <h2>Sobre mim</h2>
     <div class="card">
-        <p>Profissional de Tecnologia da Informação com experiência em infraestrutura, redes, segurança e automação de processos. Focado em soluções eficientes e melhoria contínua.</p>
+        <p>Profissional de TI com experiência em redes, segurança e automação. Focado em soluções eficientes e melhoria contínua.</p>
     </div>
 </section>
 
-<section id="projetos">
+<section id="projetos" class="fade">
     <h2>Projetos</h2>
 
     <div class="card">
-        <h3>🔐 Projeto de Segurança</h3>
-        <p>Implementação de políticas de segurança em ambiente corporativo com Microsoft 365.</p>
+        <h3>🔐 Segurança</h3>
+        <p>Implementação de políticas de segurança no Microsoft 365.</p>
     </div>
 
     <div class="card">
-        <h3>🌐 Infraestrutura de Rede</h3>
-        <p>Configuração e gerenciamento de redes corporativas com múltiplos dispositivos.</p>
+        <h3>🌐 Infraestrutura</h3>
+        <p>Gerenciamento de rede corporativa com múltiplos dispositivos.</p>
     </div>
 
     <div class="card">
-        <h3>⚙️ Automação de Processos</h3>
-        <p>Automatização de tarefas operacionais utilizando scripts e ferramentas de TI.</p>
+        <h3>⚙️ Automação</h3>
+        <p>Automação de tarefas com scripts e ferramentas de TI.</p>
     </div>
-
 </section>
 
-<section id="contato">
+<section id="contato" class="fade">
     <h2>Contato</h2>
     <div class="card">
         <p>Email: seuemail@email.com</p>
         <p>LinkedIn: linkedin.com/in/seuperfil</p>
-
         <a class="btn" href="mailto:seuemail@email.com">Entrar em contato</a>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Felipe Candido - Todos os direitos reservados</p>
+    <p>© 2026 Felipe Candido</p>
 </footer>
+
+<script>
+// ANIMAÇÃO AO SCROLL
+const elements = document.querySelectorAll('.fade');
+
+function showOnScroll() {
+    elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
+</script>
 
 </body>
 </html>
