@@ -1,120 +1,301 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Felipe Candido | Analista de T.I</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: #fff;
-    scroll-behavior: smooth;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* ANIMAÇÃO */
-.fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+body{
+    font-family:'Poppins',sans-serif;
+    color:#fff;
+    background:#020617;
+    scroll-behavior:smooth;
+    overflow-x:hidden;
 }
 
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
+/* FUNDO PARALLAX */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(rgba(2,6,23,0.88),
+    rgba(2,6,23,0.92)),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
+    transform:scale(1.1);
+}
+
+/* EFEITO BRILHO */
+
+body::after{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top right,
+    rgba(37,99,235,0.18),
+    transparent 35%);
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+    padding:18px;
+    backdrop-filter:blur(14px);
+    background:rgba(15,23,42,0.55);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 18px;
+    font-weight:600;
+    transition:0.3s;
+    position:relative;
+}
+
+nav a:hover{
+    color:#60a5fa;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#60a5fa;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
 }
 
 /* HEADER */
-header {
-    background: linear-gradient(90deg, #2563eb, #1e40af);
-    padding: 60px;
-    text-align: center;
-    animation: slideTop 1s ease;
+
+header{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
 }
 
-@keyframes slideTop {
-    from {transform: translateY(-50px); opacity: 0;}
-    to {transform: translateY(0); opacity: 1;}
+header h1{
+    font-size:70px;
+    font-weight:700;
+    margin-bottom:15px;
+    background:linear-gradient(90deg,#60a5fa,#2563eb);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:fadeDown 1s ease;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 40px;
-}
-
-header p {
-    margin-top: 10px;
-    font-size: 18px;
-}
-
-/* MENU */
-nav {
-    text-align: center;
-    padding: 10px;
-    background: #1e293b;
-}
-
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+header p{
+    font-size:22px;
+    color:#cbd5e1;
+    max-width:700px;
+    animation:fadeUp 1.2s ease;
 }
 
 /* SEÇÕES */
-section {
-    padding: 50px;
-    max-width: 1000px;
-    margin: auto;
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 25px;
+}
+
+section h2{
+    font-size:38px;
+    margin-bottom:35px;
+    text-align:center;
+    position:relative;
+}
+
+section h2::after{
+    content:'';
+    width:80px;
+    height:4px;
+    background:#2563eb;
+    display:block;
+    margin:12px auto;
+    border-radius:10px;
 }
 
 /* CARDS */
-.card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    transition: 0.3s;
+
+.card{
+    background:rgba(15,23,42,0.55);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:22px;
+    padding:30px;
+    margin-bottom:25px;
+    transition:0.4s;
+    box-shadow:
+    0 8px 30px rgba(0,0,0,0.35);
 }
 
-.card:hover {
-    transform: scale(1.03);
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#2563eb;
+    box-shadow:
+    0 10px 40px rgba(37,99,235,0.25);
+}
+
+/* PROJETOS */
+
+.project-icon{
+    font-size:38px;
+    margin-bottom:18px;
+    color:#60a5fa;
+}
+
+.card h3{
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.card p{
+    color:#cbd5e1;
+    line-height:1.8;
 }
 
 /* BOTÃO */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #2563eb;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: 0.3s;
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 28px;
+    border-radius:14px;
+    background:linear-gradient(90deg,#2563eb,#1d4ed8);
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.4s;
+    box-shadow:
+    0 5px 20px rgba(37,99,235,0.4);
 }
 
-.btn:hover {
-    background: #1e40af;
-    transform: scale(1.05);
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:
+    0 8px 30px rgba(37,99,235,0.6);
 }
 
 /* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #020617;
+
+footer{
+    text-align:center;
+    padding:35px;
+    background:rgba(2,6,23,0.9);
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.05);
 }
+
+/* ANIMAÇÕES */
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:42px;
+    }
+
+    header p{
+        font-size:18px;
+    }
+
+    nav a{
+        margin:0 10px;
+        font-size:14px;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    section h2{
+        font-size:30px;
+    }
+
+    .card{
+        padding:24px;
+    }
+}
+
 </style>
 </head>
 
 <body>
-
-<header>
-    <h1>Felipe Candido</h1>
-    <p>Profissional de TI | Infraestrutura | Segurança | Automação</p>
-</header>
 
 <nav>
     <a href="#sobre">Sobre</a>
@@ -122,61 +303,143 @@ footer {
     <a href="#contato">Contato</a>
 </nav>
 
+<header>
+
+    <h1>Felipe Candido</h1>
+
+    <p>
+        Profissional de TI | Infraestrutura | Segurança | Automação
+    </p>
+
+</header>
+
 <section id="sobre" class="fade">
+
     <h2>Sobre mim</h2>
+
     <div class="card">
-        <p>Profissional de TI com mais de 9 anos de experiência em infraestrutura de redes, Suporte, segurança e automação.
-            Focado em soluções eficientes e melhoria contínua.</p>
+
+        <p>
+            Profissional de TI com mais de 9 anos de experiência em infraestrutura de redes, Suporte, segurança e automação.
+            Focado em soluções eficientes e melhoria contínua.
+        </p>
+
     </div>
+
 </section>
 
 <section id="projetos" class="fade">
+
     <h2>Projetos</h2>
 
     <div class="card">
-        <h3>🔐 Segurança</h3>
-        <p>Implementação de políticas de segurança Empresarial relacionados a T.I e Segurança da informação no Microsoft 365. Entre outros..</p>
+
+        <div class="project-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <h3>Segurança</h3>
+
+        <p>
+            Implementação de políticas de segurança Empresarial relacionados a T.I e Segurança da informação no Microsoft 365. Entre outros..
+        </p>
+
     </div>
 
     <div class="card">
-        <h3>🌐 Infraestrutura</h3>
-        <p>Gerenciamento de rede corporativa, Switchs, Roteadores, Repetidores, Cabeamento e configurações com múltiplos dispositivos.</p>
+
+        <div class="project-icon">
+            <i class="fa-solid fa-network-wired"></i>
+        </div>
+
+        <h3>Infraestrutura</h3>
+
+        <p>
+            Gerenciamento de rede corporativa, Switchs, Roteadores, Repetidores, Cabeamento e configurações com múltiplos dispositivos.
+        </p>
+
     </div>
 
     <div class="card">
-        <h3>⚙️ Automação</h3>
-        <p>Automação de tarefas com scripts e ferramentas de TI.</p>
+
+        <div class="project-icon">
+            <i class="fa-solid fa-gears"></i>
+        </div>
+
+        <h3>Automação</h3>
+
+        <p>
+            Automação de tarefas com scripts e ferramentas de TI.
+        </p>
+
     </div>
+
 </section>
 
 <section id="contato" class="fade">
+
     <h2>Contato</h2>
+
     <div class="card">
-        <p>Email: lipe-candido@hotmail.com</p>
-        <p>LinkedIn: https://www.linkedin.com/in/felipe-augusto-candido-b46474b5/</p>
-        <a class="btn" href="mailto:lipe-candido@hotmail.com">Entrar em contato</a>
+
+        <p>
+            <i class="fa-solid fa-envelope"></i>
+            Email: lipe-candido@hotmail.com
+        </p>
+
+        <br>
+
+        <p>
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn:
+            www.linkedin.com/in/felipe-augusto-candido-b46474b5/
+        </p>
+
+        <a class="btn"
+        href="mailto:lipe-candido@hotmail.com">
+
+        Entrar em contato
+
+        </a>
+
     </div>
+
 </section>
 
 <footer>
-    <p>© 2026 Felipe Candido</p>
+
+    <p>
+        © 2026 Felipe Candido
+    </p>
+
 </footer>
 
 <script>
-// ANIMAÇÃO AO SCROLL
+
+/* ANIMAÇÃO AO ROLAR */
+
 const elements = document.querySelectorAll('.fade');
 
-function showOnScroll() {
+function showOnScroll(){
+
     elements.forEach(el => {
+
         const top = el.getBoundingClientRect().top;
-        if(top < window.innerHeight - 50){
+
+        if(top < window.innerHeight - 100){
+
             el.classList.add('show');
+
         }
+
     });
+
 }
 
-window.addEventListener('scroll', showOnScroll);
+window.addEventListener('scroll',showOnScroll);
+
 showOnScroll();
+
 </script>
 
 </body>
