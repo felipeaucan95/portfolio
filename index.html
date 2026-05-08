@@ -217,6 +217,52 @@ section h2::after{
     0 8px 30px rgba(37,99,235,0.6);
 }
 
+/* SERVIÇOS */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.service-card{
+    background:rgba(15,23,42,0.55);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:22px;
+    padding:35px 20px;
+    text-align:center;
+    transition:0.4s;
+    box-shadow:
+    0 8px 30px rgba(0,0,0,0.35);
+}
+
+.service-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    border-color:#3b82f6;
+    box-shadow:
+    0 10px 40px rgba(59,130,246,0.35);
+}
+
+.service-card i{
+    font-size:52px;
+    color:#60a5fa;
+    margin-bottom:20px;
+    transition:0.4s;
+}
+
+.service-card:hover i{
+    transform:scale(1.15);
+    color:#93c5fd;
+}
+
+.service-card h3{
+    font-size:22px;
+    color:#f8fafc;
+    line-height:1.5;
+}
+    
 /* FOOTER */
 
 footer{
@@ -298,9 +344,12 @@ footer{
 <body>
 
 <nav>
+    
     <a href="#sobre">Sobre</a>
     <a href="#projetos">Projetos</a>
+    <a href="#servicos">Serviços</a>
     <a href="#contato">Contato</a>
+
 </nav>
 
 <header>
@@ -375,7 +424,94 @@ footer{
     </div>
 
 </section>
+    
+<!-- SERVIÇOS -->
 
+<section id="servicos" class="fade">
+
+    <h2>Serviços de T.I</h2>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <i class="fa-solid fa-user-shield"></i>
+            <h3>Contas & Acessos</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Business Intelligence & Relatórios</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-chalkboard"></i>
+            <h3>Tecnologia & Equipamentos Educacionais</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-people-group"></i>
+            <h3>Consultoria & Desenvolvimento</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-laptop"></i>
+            <h3>Suporte a Dispositivos</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Email, Calendário & Colaboração</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-cloud"></i>
+            <h3>Aplicações Corporativas</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-wifi"></i>
+            <h3>Rede, Voz & Conectividade</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-microscope"></i>
+            <h3>Pesquisa em T.I</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-lock"></i>
+            <h3>Segurança</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <h3>Suporte & Treinamento</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Sistemas & Infraestrutura de Dados</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>Ensino & Aprendizagem</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-video"></i>
+            <h3>Vídeo & Mídia</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-globe"></i>
+            <h3>Desenvolvimento Web & Hospedagem</h3>
+        </div>
+
+    </div>
+
+</section>
+    
 <section id="contato" class="fade">
 
     <h2>Contato</h2>
