@@ -37,13 +37,16 @@ body::before{
     width:100%;
     height:100%;
     background:
-    linear-gradient(rgba(2,6,23,0.88),
-    rgba(2,6,23,0.92)),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
+    linear-gradient(
+    rgba(8,8,8,0.70),
+    rgba(15,0,0,0.78)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
     z-index:-2;
-    transform:scale(1.1);
+    transform:scale(1.08);
+    filter:brightness(1.15);
 }
 
 /* EFEITO BRILHO */
@@ -53,10 +56,13 @@ body::after{
     position:fixed;
     width:100%;
     height:100%;
+
     background:
-    radial-gradient(circle at top right,
-    rgba(37,99,235,0.18),
+    radial-gradient(
+    circle at top right,
+    rgba(255,0,85,0.22),
     transparent 35%);
+
     z-index:-1;
 }
 
@@ -118,10 +124,14 @@ header h1{
     font-size:70px;
     font-weight:700;
     margin-bottom:15px;
-    background:linear-gradient(90deg,#60a5fa,#2563eb);
+    background:linear-gradient(90deg,#ff4d6d,#ff1744);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     animation:fadeDown 1s ease;
+
+    text-shadow:
+    0 0 20px rgba(255,23,68,0.45);
+    
 }
 
 header p{
@@ -217,233 +227,6 @@ section h2::after{
     0 8px 30px rgba(37,99,235,0.6);
 }
 
-/* SERVIÇOS */
-
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    margin-top:40px;
-}
-
-.service-card{
-    background:rgba(15,23,42,0.55);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:22px;
-    padding:35px 20px;
-    text-align:center;
-    transition:0.4s;
-    box-shadow:
-    0 8px 30px rgba(0,0,0,0.35);
-}
-
-.service-card:hover{
-    transform:translateY(-10px) scale(1.03);
-    border-color:#3b82f6;
-    box-shadow:
-    0 10px 40px rgba(59,130,246,0.35);
-}
-
-.service-card i{
-    font-size:52px;
-    color:#60a5fa;
-    margin-bottom:20px;
-    transition:0.4s;
-}
-
-.service-card:hover i{
-    transform:scale(1.15);
-    color:#93c5fd;
-}
-
-.service-card h3{
-    font-size:22px;
-    color:#f8fafc;
-    line-height:1.5;
-}
-
-/* ORÇAMENTO */
-
-.quote-box{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    margin-top:50px;
-    background:rgba(15,23,42,0.55);
-    backdrop-filter:blur(16px);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:30px;
-    padding:45px;
-    box-shadow:
-    0 10px 40px rgba(0,0,0,0.35);
-}
-
-.quote-info h3{
-    font-size:34px;
-    margin-bottom:20px;
-    color:#60a5fa;
-}
-
-.quote-info p{
-    color:#cbd5e1;
-    line-height:1.8;
-    margin-bottom:25px;
-}
-
-.quote-info ul{
-    list-style:none;
-}
-
-.quote-info li{
-    margin-bottom:15px;
-    color:#f1f5f9;
-}
-
-.quote-info i{
-    color:#3b82f6;
-    margin-right:10px;
-}
-
-.quote-form{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-.input-group{
-    display:flex;
-    align-items:center;
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:14px;
-    padding:15px;
-    transition:0.3s;
-}
-
-.input-group:hover{
-    border-color:#3b82f6;
-}
-
-.input-group i{
-    color:#60a5fa;
-    margin-right:12px;
-    font-size:18px;
-}
-
-.input-group input{
-    width:100%;
-    background:none;
-    border:none;
-    outline:none;
-    color:#fff;
-    font-size:16px;
-}
-
-.input-group input::placeholder{
-    color:#94a3b8;
-}
-
-.quote-form button{
-    border:none;
-    cursor:pointer;
-}
-
-@media(max-width:900px){
-
-    .quote-box{
-        grid-template-columns:1fr;
-        padding:30px;
-    }
-
-    .quote-info h3{
-        font-size:28px;
-    }
-
-}
-
-/* POPUP */
-
-.popup{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    opacity:0;
-    visibility:hidden;
-    transition:0.4s;
-    z-index:9999;
-}
-
-.popup.show{
-    opacity:1;
-    visibility:visible;
-}
-
-.popup-content{
-    background:rgba(15,23,42,0.95);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:24px;
-    padding:40px;
-    width:90%;
-    max-width:420px;
-    text-align:center;
-    box-shadow:
-    0 10px 40px rgba(0,0,0,0.5);
-    animation:popupAnimation 0.5s ease;
-}
-
-.popup-content i{
-    font-size:70px;
-    color:#22c55e;
-    margin-bottom:20px;
-}
-
-.popup-content h3{
-    font-size:30px;
-    margin-bottom:15px;
-}
-
-.popup-content p{
-    color:#cbd5e1;
-    line-height:1.7;
-    margin-bottom:25px;
-}
-
-.popup-content button{
-    border:none;
-    padding:14px 28px;
-    border-radius:12px;
-    background:linear-gradient(90deg,#2563eb,#1d4ed8);
-    color:#fff;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.popup-content button:hover{
-    transform:scale(1.05);
-}
-
-@keyframes popupAnimation{
-
-    from{
-        opacity:0;
-        transform:translateY(30px) scale(0.9);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-
-}
     
 /* FOOTER */
 
@@ -529,8 +312,6 @@ footer{
     
     <a href="#sobre">Sobre</a>
     <a href="#projetos">Projetos</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#orcamento">Orçamento</a>
     <a href="#contato">Contato</a>
 
 </nav>
@@ -606,160 +387,80 @@ footer{
 
     </div>
 
-</section>
-    
-<!-- SERVIÇOS -->
+    <div class="card">
 
-<section id="servicos" class="fade">
-
-    <h2>Serviços de T.I</h2>
-
-    <div class="services-grid">
-
-        <div class="service-card">
-            <i class="fa-solid fa-user-shield"></i>
-            <h3>Contas & Acessos</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-chart-line"></i>
-            <h3>Business Intelligence & Relatórios</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-chalkboard"></i>
-            <h3>Tecnologia & Equipamentos Educacionais</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-people-group"></i>
-            <h3>Consultoria & Desenvolvimento</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-laptop"></i>
-            <h3>Suporte a Dispositivos</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-envelope"></i>
-            <h3>Email, Calendário & Colaboração</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-cloud"></i>
-            <h3>Aplicações Corporativas</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-wifi"></i>
-            <h3>Rede, Voz & Conectividade</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-microscope"></i>
-            <h3>Pesquisa em T.I</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-lock"></i>
-            <h3>Segurança</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-chalkboard-user"></i>
-            <h3>Suporte & Treinamento</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-database"></i>
-            <h3>Sistemas & Infraestrutura de Dados</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <h3>Ensino & Aprendizagem</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-video"></i>
-            <h3>Vídeo & Mídia</h3>
-        </div>
-
-        <div class="service-card">
-            <i class="fa-solid fa-globe"></i>
-            <h3>Desenvolvimento Web & Hospedagem</h3>
-        </div>
-
+    <div class="project-icon">
+        <i class="fa-solid fa-user-shield"></i>
     </div>
+
+    <h3>Contas & Acessos</h3>
+
+    <p>
+        Gerenciamento seguro de usuários, permissões, autenticação e acessos corporativos.
+    </p>
+
+</div>
+
+<div class="card">
+
+    <div class="project-icon">
+        <i class="fa-solid fa-chart-line"></i>
+    </div>
+
+    <h3>Business Intelligence</h3>
+
+    <p>
+        Dashboards, relatórios estratégicos e análise de dados para tomada de decisões.
+    </p>
+
+</div>
+
+<div class="card">
+
+    <div class="project-icon">
+        <i class="fa-solid fa-cloud"></i>
+    </div>
+
+    <h3>Aplicações Corporativas</h3>
+
+    <p>
+        Implementação e suporte de sistemas empresariais e soluções em nuvem.
+    </p>
+
+</div>
+
+<div class="card">
+
+    <div class="project-icon">
+        <i class="fa-solid fa-lock"></i>
+    </div>
+
+    <h3>Segurança Avançada</h3>
+
+    <p>
+        Proteção de infraestrutura, políticas de segurança e monitoramento corporativo.
+    </p>
+
+</div>
+
+<div class="card">
+
+    <div class="project-icon">
+        <i class="fa-solid fa-globe"></i>
+    </div>
+
+    <h3>Desenvolvimento Web</h3>
+
+    <p>
+        Criação de sites modernos, responsivos e com aparência premium.
+    </p>
+
+</div>
 
 </section>
 
-<!-- ORÇAMENTO -->
+    /* CONTATO */
 
-<section id="orcamento" class="fade">
-
-    <h2>Solicite um Orçamento</h2>
-
-    <div class="quote-box">
-
-        <div class="quote-info">
-
-            <h3>Transforme sua infraestrutura de T.I</h3>
-
-            <p>
-                Preencha os dados abaixo e retornaremos com uma proposta personalizada para sua empresa.
-            </p>
-
-            <ul>
-                <li><i class="fa-solid fa-check"></i> Segurança da Informação</li>
-                <li><i class="fa-solid fa-check"></i> Infraestrutura Corporativa</li>
-                <li><i class="fa-solid fa-check"></i> Redes & Servidores</li>
-                <li><i class="fa-solid fa-check"></i> Automação & Suporte</li>
-            </ul>
-
-        </div>
-
-        <form class="quote-form"
-        action="https://formsubmit.co/lipe-candido@hotmail.com"
-        method="POST">
-
-            <div class="input-group">
-                <i class="fa-solid fa-user"></i>
-                <input type="text"
-                name="nome"
-                placeholder="Seu nome"
-                required>
-            </div>
-
-            <div class="input-group">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="email"
-                name="email"
-                placeholder="Seu e-mail"
-                required>
-            </div>
-
-            <div class="input-group">
-                <i class="fa-brands fa-whatsapp"></i>
-                <input type="tel"
-                name="whatsapp"
-                placeholder="Seu WhatsApp"
-                required>
-            </div>
-
-            <button type="submit" class="btn">
-
-                <i class="fa-solid fa-paper-plane"></i>
-                Solicitar orçamento
-
-            </button>
-
-        </form>
-
-    </div>
-
-    
 <section id="contato" class="fade">
 
     <h2>Contato</h2>
@@ -810,30 +511,6 @@ footer{
 
 </section>
     
-<!-- POPUP SUCESSO -->
-
-<div id="success-popup" class="popup">
-
-    <div class="popup-content">
-
-        <i class="fa-solid fa-circle-check"></i>
-
-        <h3>Orçamento enviado com sucesso!</h3>
-
-        <p>
-            Recebemos suas informações.
-            Em breve entraremos em contato.
-        </p>
-
-        <button onclick="closePopup()">
-
-            Fechar
-
-        </button>
-
-    </div>
-
-</div>
     
 <footer>
 
@@ -868,37 +545,6 @@ function showOnScroll(){
 window.addEventListener('scroll',showOnScroll);
 
 showOnScroll();
-
-/* POPUP ORÇAMENTO */
-
-const form = document.querySelector('.quote-form');
-
-const popup = document.getElementById('success-popup');
-
-form.addEventListener('submit', function(e){
-
-    e.preventDefault();
-
-    fetch(form.action,{
-        method:'POST',
-        body:new FormData(form)
-    })
-
-    .then(response => {
-
-        popup.classList.add('show');
-
-        form.reset();
-
-    });
-
-});
-
-function closePopup(){
-
-    popup.classList.remove('show');
-
-}
     
 </script>
 
