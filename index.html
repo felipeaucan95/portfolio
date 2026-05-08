@@ -361,6 +361,89 @@ section h2::after{
     }
 
 }
+
+/* POPUP */
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:0.4s;
+    z-index:9999;
+}
+
+.popup.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.popup-content{
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    padding:40px;
+    width:90%;
+    max-width:420px;
+    text-align:center;
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.5);
+    animation:popupAnimation 0.5s ease;
+}
+
+.popup-content i{
+    font-size:70px;
+    color:#22c55e;
+    margin-bottom:20px;
+}
+
+.popup-content h3{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.popup-content p{
+    color:#cbd5e1;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.popup-content button{
+    border:none;
+    padding:14px 28px;
+    border-radius:12px;
+    background:linear-gradient(90deg,#2563eb,#1d4ed8);
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.popup-content button:hover{
+    transform:scale(1.05);
+}
+
+@keyframes popupAnimation{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(0.9);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
     
 /* FOOTER */
 
@@ -637,11 +720,14 @@ footer{
 
         </div>
 
-        <form class="quote-form">
+        <form class="quote-form"
+        action="https://formsubmit.co/lipe-candido@hotmail.com"
+        method="POST">
 
             <div class="input-group">
                 <i class="fa-solid fa-user"></i>
                 <input type="text"
+                name="nome"
                 placeholder="Seu nome"
                 required>
             </div>
@@ -649,6 +735,7 @@ footer{
             <div class="input-group">
                 <i class="fa-solid fa-envelope"></i>
                 <input type="email"
+                name="email"
                 placeholder="Seu e-mail"
                 required>
             </div>
@@ -656,6 +743,7 @@ footer{
             <div class="input-group">
                 <i class="fa-brands fa-whatsapp"></i>
                 <input type="tel"
+                name="whatsapp"
                 placeholder="Seu WhatsApp"
                 required>
             </div>
@@ -721,7 +809,32 @@ footer{
     </div>
 
 </section>
+    
+<!-- POPUP SUCESSO -->
 
+<div id="success-popup" class="popup">
+
+    <div class="popup-content">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <h3>Orçamento enviado com sucesso!</h3>
+
+        <p>
+            Recebemos suas informações.
+            Em breve entraremos em contato.
+        </p>
+
+        <button onclick="closePopup()">
+
+            Fechar
+
+        </button>
+
+    </div>
+
+</div>
+    
 <footer>
 
     <p>
@@ -756,6 +869,37 @@ window.addEventListener('scroll',showOnScroll);
 
 showOnScroll();
 
+/* POPUP ORÇAMENTO */
+
+const form = document.querySelector('.quote-form');
+
+const popup = document.getElementById('success-popup');
+
+form.addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    fetch(form.action,{
+        method:'POST',
+        body:new FormData(form)
+    })
+
+    .then(response => {
+
+        popup.classList.add('show');
+
+        form.reset();
+
+    });
+
+});
+
+function closePopup(){
+
+    popup.classList.remove('show');
+
+}
+    
 </script>
 
 </body>
