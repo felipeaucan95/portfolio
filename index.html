@@ -34,28 +34,35 @@ body{
 body::before{
     content:'';
     position:fixed;
+
+    top:0;
+    left:0;
+
     width:100%;
     height:100%;
 
     background:
-    linear-gradient(
-    rgba(5,5,5,0.72),
-    rgba(20,0,0,0.82)),
 
-    url('https://images.unsplash.com/photo-1526378800651-cf1df3c6d4d4?q=80&w=2070&auto=format&fit=crop');
+    linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(18,0,0,0.72)
+    ),
+
+    url('https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=2070&auto=format&fit=crop');
 
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
     background-attachment:fixed;
 
     z-index:-2;
 
-    transform:scale(1.06);
-
     filter:
-    brightness(1.08)
+    brightness(1.15)
     contrast(1.12)
     saturate(1.15);
+
+    transform:scale(1.05);
 }
 
 /* EFEITO BRILHO */
@@ -99,7 +106,7 @@ nav a{
 }
 
 nav a:hover{
-    color:#60a5fa;
+    color:#ff4d6d;
 }
 
 nav a::after{
@@ -109,7 +116,7 @@ nav a::after{
     height:2px;
     left:0;
     bottom:-5px;
-    background:#60a5fa;
+    background:#ff4d6d;
     transition:0.3s;
 }
 
@@ -175,7 +182,7 @@ section h2::after{
     content:'';
     width:80px;
     height:4px;
-    background:#2563eb;
+    background:#ff1744;
     display:block;
     margin:12px auto;
     border-radius:10px;
@@ -213,7 +220,12 @@ section h2::after{
 .project-icon{
     font-size:38px;
     margin-bottom:18px;
-    color:#60a5fa;
+    color:#ff4d6d;
+
+    text-shadow:
+    0 0 12px rgba(255,23,68,0.45);
+
+    transition:0.7s ease;
 }
 
 .card h3{
@@ -233,13 +245,13 @@ section h2::after{
     margin-top:20px;
     padding:14px 28px;
     border-radius:14px;
-    background:linear-gradient(90deg,#2563eb,#1d4ed8);
+    background:linear-gradient(90deg,#7a0000,#ff1744);
     color:#fff;
     text-decoration:none;
     font-weight:600;
     transition:0.7s ease;
     box-shadow:
-    0 5px 20px rgba(37,99,235,0.4);
+    0 5px 25px rgba(255,23,68,0.35);
     position:relative;
     overflow:hidden;
 }
@@ -350,8 +362,29 @@ footer{
         font-size:30px;
     }
 
-    .card{
-        padding:24px;
+   .card{
+    background:
+    linear-gradient(
+    145deg,
+    rgba(20,20,20,0.72),
+    rgba(35,0,0,0.55)
+    );
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,70,90,0.10);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    transition:0.7s ease;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.45);
+}
     }
 }
 
@@ -511,8 +544,6 @@ footer{
 
 </section>
 
-    /* CONTATO */
-
 <section id="contato" class="fade">
 
     <h2>Contato</h2>
@@ -542,7 +573,7 @@ footer{
 
             <a href="https://www.instagram.com/yn.feecshaq/"
             target="_blank"
-            style="color:#60a5fa; text-decoration:none;">
+            style="color:#ff4d6d; text-decoration:none;">
 
             @yn.feecshaq
 
